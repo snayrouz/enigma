@@ -7,9 +7,13 @@
 #     "&", "*", "(", ")", "[", "]", "<", ">",
 #     ";", ":", "/", "?", " \ ", "|"]
 
+    (' '..'z').to_a
+
 # what to do with this character map?
 
 class Encrypt
+
+  def initialize(message,key)
 
   def encrypt(message)
 
