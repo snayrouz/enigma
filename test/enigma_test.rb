@@ -1,14 +1,13 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
+require './test/test_helper'
+require './lib/enigma'
 
 class EnigmaTest < Minitest::Test
 
   def setup
-    @message =
-    @key =
-    @date =
-    @encrypted_message =
+    @message = "this is so secret ..end.."
+    @key = "12345"
+    @date = Date.today
+    @encrypted_message = #ahhh don't know yet
   end
 
   def test_it_exists
@@ -18,25 +17,8 @@ class EnigmaTest < Minitest::Test
 
   def test_it_can_encrypt_message
     e = Enigma.new
-    # need to assert some variable, actual
-  end
-
-  def test_it_can_decrypt_message
-    e = Enigma.new
-    # need to assert some variable, actual
-  end
-
-  def test_will_encrypt_message_and_key_and_date
-    e = Enigma.new
     actual = e.encrypt(@message, @key, @date)
-    # need to assert some variable, actual
+    assert_equal @encrypted_message, actual
   end
 
-  def test_it_can_crack_message
-    e = Enigma.new
-    actual = e.crack(@encrypted_message, @date)
-    # need to assert some variable, actual
-  end
-
-
-end
+end #why does I get an error here?
