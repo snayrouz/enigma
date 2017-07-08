@@ -1,0 +1,16 @@
+class Crack
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
