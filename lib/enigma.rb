@@ -1,55 +1,82 @@
-require './lib/encryption'
-require './lib/decryption'
-require './lib/crack'
 require './lib/helper'
+require 'pry'
+
+
 
 class Enigma
+  # attr_reader :date
+  #
+  # def initialize(date = today)
+  #   @date = date
+  # end
 
-  def initialize
-    @char_map = ('a'..'z').to_a + ("0".."9").to_a + ['.', ',', ' ']
-    @message = message
-
-
-
+  def today
+    Time.now.strftime("%d%m%y").to_i
   end
-
-
-  def encrypt(my_message, key = rand_key, date = (Date.today.strftime "%d%m%y"))
-
-
-
-  end
-
-
-
-
-
 
   def rand_key
-    key = rand(0..9).to_s
-    4.times do
-      key << rand(0..9)to_s
-      key.to_i
+    key = ""
+    # key = rand(0..9)
+    5.times {key << rand(0..9).to_s}
+    # binding.pry
+    key.to_i
+    return key
+  end
+
+  def rotations(key)
+    (0..3).map do |num|
+      key.to_s[num, 2].to_i
     end
   end
 
-  def read_message(read_name)
-    (File.open(read_name, 'r') { |f| f.read}).chomp
-  end
-
-  def write_message(message, write_name)
-    File.open(write_name, 'w') {|f| f.write(message)}
-  end
-
-  def offset_converstion(date)
-    squared_date = (date ** 2)
-    squared_date.split('').map! do |num|
+  def offset(date)
+    squared_date = (date.to_i**2)
+    squared_date.to_s.split("")[-4..-1].map do |num|
       num.to_i
+      # binding.pry
     end
   end
 
+  def combined(rotations,offset)
+
+  end
 
 end
+
+
+
+
+
+
+# def read_message(read_name)
+#   (File.open(read_name, 'r') { |f| f.read}).chomp
+# end
+#
+# def write_message(message, write_name)
+#   File.open(write_name, 'w') {|f| f.write(message)}
+# end
+
+e = Enigma.new
+e.rand_key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -66,4 +93,38 @@ end
 #
 #   encrypted_message =
 #   output
+# end
+
+
+
+# def initialize
+#   @char_map = ('a'..'z').to_a + ("0".."9").to_a + ['.', ',', ' ']
+#   @message = message
+#
+#
+#
+# end
+#
+#
+# def encrypt(my_message, key = rand_key, date = (Date.today.strftime "%d%m%y"))
+#
+#
+#
+# end
+#
+
+#
+# def read_message(read_name)
+#   (File.open(read_name, 'r') { |f| f.read}).chomp
+# end
+#
+# def write_message(message, write_name)
+#   File.open(write_name, 'w') {|f| f.write(message)}
+# end
+#
+# def offset_converstion(date)
+#   squared_date = (date ** 2)
+#   squared_date.split("").map! do |num|
+#     num.to_i
+#   end
 # end

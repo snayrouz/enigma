@@ -1,3 +1,3 @@
-require './lib/encrypt'
-require './lib/decrypt'
-require './lib/crack'
+# require './lib/encrypt'
+# require './lib/decrypt'
+# require './lib/crack'
