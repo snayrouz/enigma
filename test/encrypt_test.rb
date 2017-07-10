@@ -7,10 +7,12 @@ require_relative 'encrypt'
 class EncryptTest < Minitest::Test
 
 
-  # def test_it_exists
-  #   message = Encrypt.new
-  #   assert_instance_of Encrypt, message.encrypt(????)
-  # end
+  def test_combine
+    e = Encrypt.new
+    
+
+
+  end
 
   def test_splits
     message = Encrypt.new("This is fun!")

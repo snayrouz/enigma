@@ -18,3 +18,21 @@ class Key
       key.to_s[num, 2].to_i
     end
   end
+
+  def rotation_a
+    rotation[0]
+  end
+
+  def rotation_b
+    rotation[1]
+  end
+
+  def rotation_c
+    rotation[2]
+  end
+
+  def rotation_d
+    rotation[3]
+  end
+
+end
