@@ -31,16 +31,11 @@ class EnigmaTest < Minitest::Test
     rotations = e.rotations(12345)
 
     assert_equal rotations, [12, 23, 34, 45]
-    # assert_equal e.combined(rotations, offset), [14, 28, 40, 46] 
+    # assert_equal e.combined(rotations, offset), [14, 28, 40, 46]
   end
-  #
-  # def test_offset_conversion
-  #   e = Enigma.new
-  #   expected = 4
-  #   actual = e.offset(Time.now.strftime("%d%m%y").to_i)
-  #
-  #   assert_equal expected, actual
-  # end
+
+
+
 
 
 end
@@ -51,6 +46,13 @@ end
 
 
 
+# def test_offset_conversion
+#   e = Enigma.new
+#   expected = 4
+#   actual = e.offset(Time.now.strftime("%d%m%y").to_i)
+#
+#   assert_equal expected, actual
+# end
 
 
 

@@ -12,10 +12,15 @@ char_map = {1 => ["A"], 2 => ["B"], 3 => ["C"], 4 => ["D"], 5 => ["E"], 6 => ["F
 81 => [":"], 82 => ["/"], 83 => ["?"], 84 => [" \ "], 85 => ["|"]}
 
 # take the key and find the ABCD value
-# message.split.each[4] ???
+
+
+# message.each_slice[4] ???
+
 
 # iterate through the message and assign each message character to a key value
 
 # iterate through the char_map to the value of the message characters by hash key
 
 # add the value of the assigned key to the hash key to get the character for the encrypted message
+
+cha
