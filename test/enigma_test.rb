@@ -47,13 +47,13 @@ end
 
 
 
-# def test_offset_conversion
-#   e = Enigma.new
-#   expected = 4
-#   actual = e.offset(Time.now.strftime("%d%m%y").to_i)
-#
-#   assert_equal expected, actual
-# end
+def test_offset_conversion
+  e = Enigma.new
+  expected = 
+  actual = e.offset(Time.now.strftime("%d%m%y").to_i)
+
+  assert_equal expected, actual
+end
 
 
 

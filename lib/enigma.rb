@@ -6,9 +6,9 @@ require 'pry'
 class Enigma
   # attr_reader :date
   #
-  # def initialize(date = today)
-  #   @date = date
-  # end
+  def initialize(date = today)
+    @date = date
+  end
 
   def today
     Time.now.strftime("%d%m%y").to_i
@@ -27,7 +27,7 @@ class Enigma
     end
   end
 
-  def offset(date)
+  def offset(date = (Date.today.strftime "%d%m%y"))
     squared_date = (date.to_i**2)
     squared_date.to_s.split("")[-4..-1].map do |num|
       num.to_i

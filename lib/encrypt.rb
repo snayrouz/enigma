@@ -4,7 +4,7 @@ require 'pry'
 
 class Encrypt
 
-  def initialize(message, key, date = (Date.today.strftime "%d%m%y"))
+  def initialize(message, key = nil, date = (Date.today.strftime "%d%m%y"))
     @message = message
 
   def encrypt(message)
