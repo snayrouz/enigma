@@ -45,7 +45,8 @@ end
 
 
 
-
+# at some point, key = nil. default variable? key = nil ? key = Key.new
+# make a Key class?
 
 
 # def read_message(read_name)
