@@ -1,5 +1,6 @@
 require './test/test_helper'
 require './lib/enigma'
+require 'pry'
 
 class EnigmaTest < Minitest::Test
 

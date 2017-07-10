@@ -16,9 +16,7 @@ class Enigma
 
   def rand_key
     key = ""
-    # key = rand(0..9)
     5.times {key << rand(0..9).to_s}
-    # binding.pry
     key.to_i
     return key
   end
@@ -33,16 +31,24 @@ class Enigma
     squared_date = (date.to_i**2)
     squared_date.to_s.split("")[-4..-1].map do |num|
       num.to_i
-      # binding.pry
     end
   end
 
   def combined(rotations,offset)
 
+    # iterate through the message and assign each message character to a key value
+
+    # iterate through the char_map to the value of the message characters by hash key
+
+    # add the value of the assigned key to the hash key to get the character for the encrypted message
+
   end
 
 end
 
+
+# e = Enigma.new
+# e.rand_key
 
 
 # at some point, key = nil. default variable? key = nil ? key = Key.new
@@ -57,8 +63,7 @@ end
 #   File.open(write_name, 'w') {|f| f.write(message)}
 # end
 
-e = Enigma.new
-e.rand_key
+
 
 
 
@@ -95,16 +100,6 @@ e.rand_key
 #   encrypted_message =
 #   output
 # end
-
-
-
-# def initialize
-#   @char_map = ('a'..'z').to_a + ("0".."9").to_a + ['.', ',', ' ']
-#   @message = message
-#
-#
-#
-# end
 #
 #
 # def encrypt(my_message, key = rand_key, date = (Date.today.strftime "%d%m%y"))
@@ -121,11 +116,4 @@ e.rand_key
 #
 # def write_message(message, write_name)
 #   File.open(write_name, 'w') {|f| f.write(message)}
-# end
-#
-# def offset_converstion(date)
-#   squared_date = (date ** 2)
-#   squared_date.split("").map! do |num|
-#     num.to_i
-#   end
 # end

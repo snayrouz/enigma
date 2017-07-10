@@ -1,4 +1,4 @@
-
+require 'pry'
 
 # what to do with this character map?
 
