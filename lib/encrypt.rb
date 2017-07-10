@@ -16,11 +16,15 @@ class Encrypt
   def combined(rotations, offsets)
     rotations.map.with_index do |rotation, index|
       offset[index] + rotation
+
   end
 
 
   def encrypt(message)
+    rotation_a + offset_a
 
+
+    char_map.rotate[rotation_a + offset_a]
 
 
   end

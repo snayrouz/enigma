@@ -9,9 +9,9 @@ class EncryptTest < Minitest::Test
 
   def test_combine
     e = Encrypt.new
+
+
     
-
-
   end
 
   def test_splits
