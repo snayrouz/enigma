@@ -23,12 +23,6 @@ class Enigma
     return key
   end
 
-  def rotations(key)
-    (0..3).map do |num|
-      key.to_s[num, 2].to_i
-    end
-  end
-
   def offset(date)
     squared_date = (date.to_i**2)
     squared_date.to_s.split("")[-4..-1].map do |num|
