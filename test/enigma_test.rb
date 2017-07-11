@@ -7,6 +7,7 @@ class EnigmaTest < Minitest::Test
 
   def test_it_exists
     e = Enigma.new
+    
     assert_instance_of Enigma, e
   end
 
@@ -43,10 +44,6 @@ end
 
 
 
-
-
-
-
 def test_offset_conversion
   e = Enigma.new
   expected =
@@ -56,6 +53,20 @@ def test_offset_conversion
 end
 
 
+  def test_print_message_feedback_success_feedback
+    e = Enigma.new("message.txt", "encrypted.txt")
+    assert_equal "Created 'encrypted.txt' with the key #{key} and date #{date}", e
+  end
+
+  def test_print_message_feedback_success_feedback_for_decrypt
+    d = Decrypt.new("decrypted.txt", Key)
+    assert_equal "Created 'decrypted.txt' with the key #{key} and date #{date}", d
+  end
+
+  def test_print_message_feedback_success_feedback_for_crack
+    c = Crack.new("cracked.txt", Key)
+    assert_equal "Created 'cracked.txt' with the key #{key} and date #{date}", c
+  end
 
 # def test_it_can_encrypt_message
 #   e = Enigma.new

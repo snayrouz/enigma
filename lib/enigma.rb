@@ -1,8 +1,6 @@
 require './lib/helper'
 require 'pry'
 
-
-
 class Enigma
   # attr_reader :date
   #
@@ -25,6 +23,20 @@ class Enigma
   end
 
 end
+
+def print_encrypt_message
+  p "Created #{[output_filename]} with the key #{key} and date #{date}"
+end
+
+def print_decrypt_message
+  p "Created #{[output_filename]} with the key #{key} and date #{date}"
+end
+
+def print_crack_message
+  p "Created #{[output_filename]} with the cracked key #{key} and date #{date}"
+end
+
+
 
 # e = Enigma.new
 # e.rand_key

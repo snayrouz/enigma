@@ -24,7 +24,7 @@ class Encrypt
     rotation_a + offset_a
 
 
-    char_map.rotate[rotation_a + offset_a]
+      char_map.rotate[rotation_a + offset_a]
 
 
   end
