@@ -12,29 +12,31 @@ class Enigma
     Time.now.strftime("%d%m%y").to_i
   end
 
-  def combined(rotations,offset)
-
-    # iterate through the message and assign each message character to a key value
-
-    # iterate through the char_map to the value of the message characters by hash key
-
-    # add the value of the assigned key to the hash key to get the character for the encrypted message
+  def combined_shift(rotations, offset)
+    first_char = @rotation_a = @offset_a
 
   end
+  puts first_char
 
 end
 
-def print_encrypt_message
-  p "Created #{[output_filename]} with the key #{key} and date #{date}"
-end
 
-def print_decrypt_message
-  p "Created #{[output_filename]} with the key #{key} and date #{date}"
-end
 
-def print_crack_message
-  p "Created #{[output_filename]} with the cracked key #{key} and date #{date}"
-end
+  # def get_characters
+  #   File.read(@input_filename).length
+  # end
+
+  def print_encrypt_message
+    p "Created #{[output_filename]} with the key #{key} and date #{date}"
+  end
+
+  def print_decrypt_message
+    p "Created #{[output_filename]} with the key #{key} and date #{date}"
+  end
+
+  def print_crack_message
+    p "Created #{[output_filename]} with the cracked key #{key} and date #{date}"
+  end
 
 
 

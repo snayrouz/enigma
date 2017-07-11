@@ -4,15 +4,15 @@ require 'pry'
 
 class KeyTest < Minitest::Test
 
-  def test_rand_key_generator
-    k = Key.new
+  def test_rand_key
+    k = Key.new(12345)
 
     assert_equal  5, k.rand_key.length
   end
 
-  def test_rotation
+  def test_rotations
     k = Key.new(12345)
-    rotations = k.rotations
+    rotations = k.rotations(12345)
 
     assert_equal rotations, [12, 23, 34, 45]
   end
@@ -20,25 +20,25 @@ class KeyTest < Minitest::Test
   def test_rotation_a
     k = Key.new(12345)
 
-    assert_equal 12, k.rotation_a
+    assert_equal 12, k.rotation_a(12345)
   end
 
   def test_rotation_b
     k = Key.new(12345)
 
-    assert_equal 23, k.rotation_b
+    assert_equal 23, k.rotation_b(12345)
   end
 
   def test_rotation_c
     k = Key.new(12345)
 
-    assert_equal 34, k.rotation_c
+    assert_equal 34, k.rotation_c(12345)
   end
 
   def test_rotation_d
     k = Key.new(12345)
 
-    assert_equal 45, k.rotation_d
+    assert_equal 45, k.rotation_d(12345)
   end
 
 end

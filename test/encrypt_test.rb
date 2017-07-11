@@ -1,32 +1,30 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'encrypt'
+require './lib/encrypt'
+require 'pry'
 
 
 class EncryptTest < Minitest::Test
 
+  def test_encrypt_exists
+    encrypt = Encrypt.new("This is fun!")
 
-  def test_combine
-    e = Encrypt.new
-
-
-    
+    assert_instance_of Encrypt, encrypt
   end
 
   def test_splits
-    message = Encrypt.new("This is fun!")
-    assert equal [["T","h", "i", "s"], [" ", "i", "s", " "], ["f", "u", "n", "!"]], message.splits
+    encrypt = Encrypt.new("This is fun!")
+    assert_equal [["T","h", "i", "s"], [" ", "i", "s", " "], ["f", "u", "n", "!"]], encrypt.splits(message)
   end
 
+  def test_combine
+    encrypt  = Encrypt.new
 
+    expected = #value of (rotations + offset) in an array with 4 elements
+    actual = encrypt.combined(rotations, offsets)
 
-
-
-
-
-
-
-
+    assert_equal expected, actual
+  end
 
 end

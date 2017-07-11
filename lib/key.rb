@@ -1,16 +1,17 @@
+require "pry"
 class Key
   attr_reader :key
 
-  def initialize
+  def initialize(key)
     @key = []
+
   end
 
-  def generate_key
-    numbers = [0..9]
-    5.times do |number|
-      @key << numbers.sample
-    end
-    @key.join
+  def rand_key
+   key = ""
+    5.times {key << rand(0..9).to_s}
+    key.to_i
+     return key
   end
 
   def rotations(key)
@@ -19,20 +20,20 @@ class Key
     end
   end
 
-  def rotation_a
-    rotation[0]
+  def rotation_a(key)
+    rotations(key)[0]
   end
 
-  def rotation_b
-    rotation[1]
+  def rotation_b(key)
+    rotations(key)[1]
   end
 
-  def rotation_c
-    rotation[2]
+  def rotation_c(key)
+    rotations(key)[2]
   end
 
-  def rotation_d
-    rotation[3]
+  def rotation_d(key)
+    rotations(key)[3]
   end
 
 end
