@@ -13,7 +13,10 @@ class Enigma
   end
 
   def combined_shift(rotations, offset)
-    first_char = @rotation_a = @offset_a
+    first_char = @Key.rotation_a + @Offset.offset_a
+    second_char = @Key.rotation_b + @Offset.offset_b
+    third_char = @Key.rotation_c + @Offset.offset_c
+    fourth_char = @Key.rotation_d + @Offset.offset_d
 
   end
   puts first_char
