@@ -47,5 +47,10 @@ class EncryptTest < Minitest::Test
     assert_equal [7, 4, 11, 11, 14], encrypt.find_char
   end
 
+  def test_map_things
+    encrypt = Encrypt.new
+
+    assert_equal
+  end
 
 end
