@@ -8,23 +8,26 @@ require 'pry'
 class EncryptTest < Minitest::Test
 
   def test_encrypt_exists
-    encrypt = Encrypt.new("This is fun!")
+    encrypt = Encrypt.new("this is so secret ..end..")
 
     assert_instance_of Encrypt, encrypt
   end
 
   def test_splits
-    encrypt = Encrypt.new("This is fun!")
-    assert_equal [["T","h", "i", "s"], [" ", "i", "s", " "], ["f", "u", "n", "!"]], encrypt.splits(message)
+    encrypt = Encrypt.new("this is so secret ..end..")
+    expected = ["t","h", "i", "s", " ", "i", "s", " ", "s", "o", " ", "s", "e", "c", "r", "e", "t", " ", ".", ".", "e", "n", "d", ".", "."]
+    assert_equal expected, encrypt.message_splits("this is so secret ..end..")
   end
 
-  def test_combine
-    encrypt  = Encrypt.new
 
-    expected = #value of (rotations + offset) in an array with 4 elements
-    actual = encrypt.combined(rotations, offsets)
+  def test_combined_conversion
+    encrypt = Encrypt.new("this")
+
+    expected = [96, 77, 72, 42]
+    actual = e.combined_shift
 
     assert_equal expected, actual
   end
+
 
 end

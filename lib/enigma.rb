@@ -1,25 +1,22 @@
-require './lib/helper'
+require './lib/key'
+require './lib/offset'
 require 'pry'
 
 class Enigma
-  # attr_reader :date
+   attr_accessor :date, :offset, :key
   #
   def initialize(date = today)
     @date = date
+    @key = Key.new(12345)
+    @offset = Offset.new
   end
 
   def today
     Time.now.strftime("%d%m%y").to_i
   end
 
-  def combined_shift(rotations, offset)
-    first_char = @Key.rotation_a + @Offset.offset_a
-    second_char = @Key.rotation_b + @Offset.offset_b
-    third_char = @Key.rotation_c + @Offset.offset_c
-    fourth_char = @Key.rotation_d + @Offset.offset_d
 
-  end
-  puts first_char
+
 
 end
 

@@ -12,7 +12,8 @@ class KeyTest < Minitest::Test
 
   def test_rotations
     k = Key.new(12345)
-    rotations = k.rotations(12345)
+    # binding.pry
+    rotations = k.rotations
 
     assert_equal rotations, [12, 23, 34, 45]
   end
@@ -20,25 +21,25 @@ class KeyTest < Minitest::Test
   def test_rotation_a
     k = Key.new(12345)
 
-    assert_equal 12, k.rotation_a(12345)
+    assert_equal 12, k.rotation_a
   end
 
   def test_rotation_b
     k = Key.new(12345)
 
-    assert_equal 23, k.rotation_b(12345)
+    assert_equal 23, k.rotation_b
   end
 
   def test_rotation_c
     k = Key.new(12345)
 
-    assert_equal 34, k.rotation_c(12345)
+    assert_equal 34, k.rotation_c
   end
 
   def test_rotation_d
     k = Key.new(12345)
 
-    assert_equal 45, k.rotation_d(12345)
+    assert_equal 45, k.rotation_d
   end
 
 end
