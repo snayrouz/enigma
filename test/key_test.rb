@@ -12,7 +12,6 @@ class KeyTest < Minitest::Test
 
   def test_rotations
     k = Key.new(12345)
-    # binding.pry
     rotations = k.rotations
 
     assert_equal rotations, [12, 23, 34, 45]
@@ -43,16 +42,3 @@ class KeyTest < Minitest::Test
   end
 
 end
-
-
-
-  # def test_go_through_char_map
-  #   message = Encrypt.new()
-  #
-  #
-  # end
-
-  # def test_has_access_to_key_file
-  #   k = Key.new()
-  #   assert_instance_of Key, message.new_key
-  # end

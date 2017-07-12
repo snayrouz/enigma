@@ -20,7 +20,3 @@
 
 
 @char_map = ('a'..'z').to_a + ('0'..'9').to_a + [' ', '.', ','].to_a
-# take the key and find the ABCD value
-
-
-# message.each_slice[4] ???
