@@ -7,11 +7,12 @@ class Encrypt
 
   attr_reader :message
 
-  def initialize(message, key_string = nil, date = Time.now.strftime("%d%m%y").to_i)
+  def initialize(message, key_string = nil, date)
     @message = message
     @key_string = key_string
     @date = date
     @char_map = ('a'..'z').to_a + ('0'..'9').to_a + [' ', '.', ','].to_a
+    @offset = Offset.new
   end
 
   def message_splits(message)
@@ -35,13 +36,13 @@ class Encrypt
 
   def combined_shift(index)
     if index % 4 == 0
-      key.rotation_a + offset.offset_a
+      key.rotation_a + @offset.offset_a
     elsif index % 4 == 1
-      key.rotation_b + offset.offset_b
+      key.rotation_b + @offset.offset_b
     elsif index % 4 == 2
-      key.rotation_c + offset.offset_c
+      key.rotation_c + @offset.offset_c
     elsif index % 4 == 3
-      key.rotation_d + offset.offset_d
+      key.rotation_d + @offset.offset_d
     end
   end
 
@@ -50,6 +51,8 @@ class Encrypt
     array.map do |num|
       num += combined_shift(array.index(num))
     end
+    num
+    binding.pry
   end
 
   def encryption_message
@@ -57,7 +60,7 @@ class Encrypt
     encrypted_message.join
     encrypted_message.map do |num|
       @char_map.index(num)
-    end.join
+    end
   end
 
 end

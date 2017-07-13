@@ -21,6 +21,7 @@ class EncryptTest < Minitest::Test
   end
 
   def test_key
+    skip
     encrypt = Encrypt.new("this is so secret ..end..")
 
     #unsure how to write a test with true or else statement
@@ -28,11 +29,11 @@ class EncryptTest < Minitest::Test
   end
 
   def test_combined_shift
-    encrypt = Encrypt.new("this")
+    encrypt = Encrypt.new
 
     expected = [24, 8, 90, 33]
 
-    assert_equal expected, encrypt.combined_shift
+    assert_equal expected, encrypt.combined_shift("this")
   end
 
 
@@ -46,10 +47,19 @@ class EncryptTest < Minitest::Test
   end
 
   def test_cycle_through
+    skip
     encrypt = Encrypt.new
-    
+
 
     assert_equal
+  end
+
+  def test_encryption_message
+    encrypt = Encrypt.new("this")
+
+
+    assert_equal 0, encrypt.encryption_message
+
   end
 
 end
