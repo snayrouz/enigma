@@ -50,9 +50,9 @@ class Encrypt
   def encryption_message
     encrypted_message = cycle_through
     encrypted_message.join
-    # encrypted_message.map do |num|
-    #   @char_map.index(num)
-    # end.join
+    encrypted_message.map do |num|
+      @char_map.index(num)
+    end.join
   end
 
 end

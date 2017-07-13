@@ -11,7 +11,7 @@ class Key
     key.to_i
      return key
   end
-  # will break out rand_key into 4 element array, group of 2
+
   def rotations
     (0..3).map do |num|
       key.to_s[num, 2].to_i

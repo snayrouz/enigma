@@ -17,18 +17,18 @@ class Enigma
   # end
 
 
-  def encrypt(message = nil, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+  def encrypt(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
 
   end
 
-  def decrypt(message = nil, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+  def decrypt(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
 
   end
 
   def today
     Time.now.strftime("%d%m%y").to_i
   end
-  
+
   def read_message(read_name)
     (File.open(read_name, 'r') { |f| f.read}).chomp
   end
