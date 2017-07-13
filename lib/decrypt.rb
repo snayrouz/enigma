@@ -26,6 +26,14 @@ class Decrypt
   end
 
   def decrypted_message
+  def map_things
+    array = find_char
+    array.map do |num|
+      num -= combined_shift(array.index(num))
+    end
+  end
+
+  def decrypt
     new_message = message_splits(message)
     new_message.map do |char|
       @char_map.index(char)
