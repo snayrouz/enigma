@@ -41,7 +41,7 @@ class Encrypt
     end
   end
 
-  def map_things
+  def cycle_through
     array = find_char
     array.map do |num|
       num += combined_shift(array.index(num))
@@ -49,10 +49,11 @@ class Encrypt
   end
 
   def encryption_message
-    encrypted_message = map_things
-    encrypted_message.map do |num|
-      @char_map.index(num)
-    end.join
+    encrypted_message = cycle_through
+    encrypted_message.join
+    # encrypted_message.map do |num|
+    #   @char_map.index(num)
+    # end.join
   end
 
 end
