@@ -1,7 +1,6 @@
 require './lib/offset'
 require './lib/key'
 # require './lib/engima'
-require 'pry'
 
 class Encrypt
 

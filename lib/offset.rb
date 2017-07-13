@@ -1,5 +1,3 @@
-
-
 class Offset
 
   attr_reader :date
@@ -15,7 +13,7 @@ class Offset
     end
   end
 
-  def offset_a 
+  def offset_a
     offset[0]
   end
 

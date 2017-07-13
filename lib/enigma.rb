@@ -1,27 +1,34 @@
 require './lib/key'
 require './lib/offset'
 require './lib/encrypt'
-require 'pry'
+require './lib/decrypt'
+
 
 class Enigma
 
-   attr_accessor :date, :offset, :key, :encrypt
-
-  # def initialize(date = today)
+  #  attr_accessor :date, :offset, :key, :encrypt
+  #
+  # def initialize
   #   @date = today
   #   @encrypt = Encrypt.new
-  #   @key = Key.new(12345)
+  #   @decrypt = Decrypt.new
+  #   @key = Key.new
   #   @offset = Offset.new
   # end
 
-  def today
-    Time.now.strftime("%d%m%y").to_i
-  end
 
   def encrypt(message = nil, key = nil, date = Time.now.strftime("%d%m%y").to_i)
 
   end
 
+  def decrypt(message = nil, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+
+  end
+
+  def today
+    Time.now.strftime("%d%m%y").to_i
+  end
+  
   def read_message(read_name)
     (File.open(read_name, 'r') { |f| f.read}).chomp
   end
