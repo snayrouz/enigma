@@ -21,7 +21,6 @@ class EncryptTest < Minitest::Test
   end
 
   def test_key
-    skip
     encrypt = Encrypt.new("this is so secret ..end..")
 
     #unsure how to write a test with true or else statement
@@ -47,7 +46,6 @@ class EncryptTest < Minitest::Test
   end
 
   def test_cycle_through
-    skip
     encrypt = Encrypt.new
 
 

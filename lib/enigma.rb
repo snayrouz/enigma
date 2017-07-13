@@ -18,11 +18,11 @@ class Enigma
 
 
   def encrypt(message)
-    @encrypt = Encrypt.new #(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+  
   end
 
   def decrypt #(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
-    @decrypt = Decrypt.new(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+
   end
 
   def today
