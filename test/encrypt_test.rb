@@ -24,15 +24,13 @@ class EncryptTest < Minitest::Test
     encrypt = Encrypt.new("this is so secret ..end..")
 
     #unsure how to write a test with true or else statement
-
+    assert_equal Key.new, encrypt.key
   end
 
-  def test_combined_conversion
-    skip
+  def test_combined_shift
     encrypt = Encrypt.new("this")
 
     expected = [24, 8, 90, 33]
-
 
     assert_equal expected, encrypt.combined_shift
   end
@@ -49,6 +47,7 @@ class EncryptTest < Minitest::Test
 
   def test_cycle_through
     encrypt = Encrypt.new
+    
 
     assert_equal
   end

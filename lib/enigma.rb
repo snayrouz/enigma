@@ -6,23 +6,23 @@ require './lib/decrypt'
 
 class Enigma
 
-  #  attr_accessor :date, :offset, :key, :encrypt
-  #
+   attr_accessor :date, :offset, :key, :encrypt
+
   # def initialize
   #   @date = today
-  #   @encrypt = Encrypt.new
-  #   @decrypt = Decrypt.new
+  #
+  #
   #   @key = Key.new
   #   @offset = Offset.new
   # end
 
 
-  def encrypt(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
-
+  def encrypt(message)
+    @encrypt = Encrypt.new #(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
   end
 
-  def decrypt(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
-
+  def decrypt #(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
+    @decrypt = Decrypt.new(message, key = nil, date = Time.now.strftime("%d%m%y").to_i)
   end
 
   def today

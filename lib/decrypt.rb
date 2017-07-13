@@ -25,8 +25,8 @@ class Decrypt
     end
   end
 
-  def decrypted_message
-  def map_things
+
+  def cycle_through
     array = find_char
     array.map do |num|
       num -= combined_shift(array.index(num))

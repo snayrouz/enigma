@@ -1,9 +1,7 @@
 require './lib/offset'
 require './lib/key'
-# require './lib/engima'
-require './lib/engima'
+require './lib/enigma'
 require 'pry'
-
 
 class Encrypt
 
@@ -11,9 +9,13 @@ class Encrypt
 
   def initialize(message, key_string = nil, date = Time.now.strftime("%d%m%y").to_i)
     @message = message
-    @key_string = key_string4
+    @key_string = key_string
     @date = date
     @char_map = ('a'..'z').to_a + ('0'..'9').to_a + [' ', '.', ','].to_a
+  end
+
+  def message_splits(message)
+    @message = message.split(//)
   end
 
   def key
